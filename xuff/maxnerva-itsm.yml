@@ -1,0 +1,22 @@
+flowable:
+    async-executor-activate: false
+    database-schema-update: true
+    history-level: full
+    app:
+      enabled: false
+    content:
+      enabled: false
+    idm:
+      enabled: false
+    form:
+      enabled: false
+    cmmn:
+      enabled: false
+    dmn:
+      enabled: false
+    db-history-used: true
+    async-history-executor-activate: true
+
+
+
+

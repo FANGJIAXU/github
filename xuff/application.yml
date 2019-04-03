@@ -1,0 +1,35 @@
+feign:
+    hystrix:
+      enabled: true
+    connectTimeOutMillis: 5000
+    readTimeOutMillis: 5000
+hystrix:
+    command:
+      default:
+        execution:
+          isolation:
+            strategy: SEMAPHORE
+            thread:
+              timeoutInMilliseconds: 5000
+thread:
+    pool:
+      corePoolSize: 10
+      maxiPoolSize: 20
+      keepAliveTime: 0
+spring:
+    servlet:
+      multipart:
+        max-file-size: 100Mb
+        max-request-size: 100Mb
+management:
+    endpoints:
+      web:
+        exposure:
+          include: '*'
+    endpoint:
+      health:
+        show-details: ALWAYS
+
+
+
+

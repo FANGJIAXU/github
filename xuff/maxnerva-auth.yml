@@ -1,0 +1,12 @@
+ldap-host: swhdc02.ecmms.foxconn
+ldap-domain: ecmms.foxconn
+ldap-login: 0 #是否开启AD域登录，1为是，0为否
+
+shiro:
+  session:
+    validation:
+      scheduler:
+        enable: true
+    expire: 1800000
+    sessionTimeoutClean: 1800000
+

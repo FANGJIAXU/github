@@ -1,0 +1,21 @@
+feign:
+  httpclient:
+    enabled: true
+thread:
+  pool:
+    corePoolSize: 3
+influx:
+  db: telegraf
+  user: root
+  password: root
+  url: http://127.0.0.1:8016
+  retentionPolicy: 5
+spring:
+  kafka:
+    consumer:
+      bootstrap-servers: 127.0.0.1:9092
+      group-id: foo1
+      auto-offset-reset: earliest
+      enable-auto-commit: true
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer

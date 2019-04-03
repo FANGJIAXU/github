@@ -1,0 +1,12 @@
+notice:
+    email:
+        host: smtp.exmail.qq.com
+        port: 465
+        send_account: itsm@maxnerva.com
+        password: Max@123
+        protocol: smtp
+        content_type: text/html;charset=utf-8
+    wechat:
+        corpId: ww9c7af6b78fd0cf0b
+        corpsecret: YYAlO8xQEFV1cvKPzW8NDCG5coOXOzjanxuXyDbKAj4
+        agentid: 1000048

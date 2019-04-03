@@ -1,0 +1,38 @@
+config:
+  corn: 0/30 * * * * ?
+  collectCorn: 0 0 0 * * ?
+influx:
+  db: telegraf
+  user: root
+  password: root
+  url: http://127.0.0.1:8016
+zabbix:
+  session:
+     expire: 10 #单位分钟
+spring:
+  data:
+     mongodb:
+        database: alarm
+  quartz:
+     properties:
+        org:
+            quartz:
+                scheduler:
+                    instanceName: clusteredScheduler
+                    instanceId: AUTO
+                jobStore:
+                    class: org.quartz.impl.jdbcjobstore.JobStoreTX
+                    driverDelegateClass: org.quartz.impl.jdbcjobstore.StdJDBCDelegate
+                    tablePrefix: QRTZ_
+
+                    isClustered: true
+                    clusterCheckinInterval: 10000
+                    useProperties: false
+                threadPool:
+                    class: org.quartz.simpl.SimpleThreadPool
+                    threadCount: 10
+                    threadPriority: 5
+                    threadsInheritContextClassLoaderOfInitializingThread: true
+     job-store-type: jdbc
+     jdbc:
+        initialize-schema: always
