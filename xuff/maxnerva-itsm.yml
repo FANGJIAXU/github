@@ -16,6 +16,8 @@ flowable:
       enabled: false
     db-history-used: true
     async-history-executor-activate: true
+flowType:
+    dicId: 200
 
 
 
