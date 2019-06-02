@@ -57,6 +57,14 @@ hystrix:
             strategy: SEMAPHORE
             thread:
               timeoutInMilliseconds: 5000
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
 mybatis-plus:
     global-config:
         metaObjectHandler: com.maxnerva.cloud.datasource.handler.MaxMetaObjectHandler
