@@ -13,6 +13,7 @@ spring:
             class: org.quartz.impl.jdbcjobstore.JobStoreTX
             driverDelegateClass: org.quartz.impl.jdbcjobstore.StdJDBCDelegate
             tablePrefix: QRTZ_
+
             isClustered: true
             clusterCheckinInterval: 10000
             useProperties: false
@@ -24,6 +25,21 @@ spring:
     job-store-type: jdbc
     jdbc:
       initialize-schema: embedded
+inventory:
+  plan:
+    prefix: INVEN
+  task:
+    prefix: INVENT
+city:
+  dicId: 17d00257d372493298d387fd83e49eda
+guacamole:
+  username: guacadmin
+  password: guacadmin
+  ip: 10.202.229.122
+  port: 80
+  suffix:
+  token:
+    expire: 30
 webssh:
   ip: 10.202.228.8
   port: 8888

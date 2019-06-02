@@ -8,12 +8,12 @@ influx:
   db: telegraf
   user: root
   password: root
-  url: http://127.0.0.1:8016
+  url: http://10.202.229.122:8016
   retentionPolicy: 5
 spring:
   kafka:
     consumer:
-      bootstrap-servers: 127.0.0.1:9092
+      bootstrap-servers: 10.202.229.122:9092
       group-id: foo1
       auto-offset-reset: earliest
       enable-auto-commit: true
