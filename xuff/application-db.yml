@@ -1,7 +1,7 @@
 spring:     
     datasource:
       druid:
-        url: jdbc:mysql://10.202.229.122:3306/19test0321?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8
+        url: jdbc:mysql://127.0.0.1:3306/19test0321?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8
         username: root
         password: sa123
         initial-size: 10
@@ -30,7 +30,7 @@ spring:
             config:
             multi-statement-allow: true
     redis:
-      host: 10.202.229.122
+      host: 127.0.0.1
       lettuce:
         pool:
           max-active: 8
@@ -39,9 +39,9 @@ spring:
           max-idle: 8
     data:
       mongodb:
-        host: 10.202.229.122
+        host: 127.0.0.1
     rabbitmq:
-      host: 10.202.229.122
+      host: 127.0.0.1
       username: guest
       password: guest
 feign:
