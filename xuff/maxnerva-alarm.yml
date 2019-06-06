@@ -15,7 +15,7 @@ spring:
       database: alarm
   kafka:
     consumer:
-      bootstrap-servers: 10.202.229.122:9092
+      bootstrap-servers: 127.0.0.1:9092
       group-id: zabbix_event
       auto-offset-reset: earliest
       enable-auto-commit: true

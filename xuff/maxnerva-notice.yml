@@ -3,7 +3,7 @@ notice:
         host: smtp.exmail.qq.com
         port: 465
         send_account: itsm@maxnerva.com
-        password: Max@123
+        password: maxOps3@com
         protocol: smtp
         content_type: text/html;charset=utf-8
     wechat:
