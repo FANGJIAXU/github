@@ -35,7 +35,7 @@ city:
 guacamole:
   username: guacadmin
   password: guacadmin
-  ip: 127.0.0.1
+  ip: 10.202.229.122
   port: 80
   suffix:
   token:

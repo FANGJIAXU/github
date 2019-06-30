@@ -5,12 +5,12 @@ influx:
   db: telegraf
   user: root
   password: root
-  url: http://127.0.0.1:8016
+  url: http://10.202.229.122:8016
   retentionPolicy: 5
 spring:
   kafka:
     producer:
-      bootstrap-servers: 127.0.0.1:9092
+      bootstrap-servers: 10.202.229.122:9092
       retries: 0
       batch-size: 16384
       buffer-memory: 33554432

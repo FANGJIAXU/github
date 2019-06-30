@@ -58,8 +58,6 @@ hystrix:
             thread:
               timeoutInMilliseconds: 5000
 mybatis-plus:
-    global-config:
-        metaObjectHandler: com.maxnerva.cloud.datasource.handler.MaxMetaObjectHandler
     mapper-locations: mapper/*Mapper.xml
     configuration:
         call-setters-on-nulls: true
