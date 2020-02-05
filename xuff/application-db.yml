@@ -1,6 +1,9 @@
 spring:     
     datasource:
       druid:
+#        url: jdbc:mysql://10.202.228.31:3306/itsm?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8
+#        username: root
+#        password: maxnerva
         url: jdbc:mysql://127.0.0.1:3306/19test0321?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8
         username: root
         password: sa123
@@ -40,10 +43,63 @@ spring:
     data:
       mongodb:
         host: 127.0.0.1
+#    data:
+#      mongodb:
+#        host: 10.202.228.30
+#        username: maxnerva
+#        password: maxnerva
+#        database: cmdb
+      elasticsearch:
+        cluster-name: docker-cluster
+        cluster-nodes: 10.202.228.8:9300
+        repositories:
+          enabled: true
+    elasticsearch:
+      jest:
+        connection-timeout: 20000s
+        read-timeout: 20000s
+        uris: http://10.202.228.8:9200
+      rest:
+        uris: http://10.202.228.8:9200
     rabbitmq:
       host: 127.0.0.1
       username: guest
       password: guest
+    kafka:
+      consumer:
+        bootstrap-servers: 10.202.228.8:9092
+        auto-offset-reset: earliest
+        enable-auto-commit: true
+        key-desherializer: org.apache.kafka.common.serialization.StringDeserializer
+        value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      producer:
+        bootstrap-servers: 10.202.228.8:9092
+        retries: 0
+        batch-size: 4096
+        buffer-memory: 409600
+        key-serializer: org.apache.kafka.common.serialization.StringSerializer
+        value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    quartz:
+      properties:
+        org:
+          quartz:
+            scheduler:
+              instanceId: AUTO
+            jobStore:
+              class: org.quartz.impl.jdbcjobstore.JobStoreTX
+              driverDelegateClass: org.quartz.impl.jdbcjobstore.StdJDBCDelegate
+              tablePrefix: QRTZ_
+              isClustered: true
+              clusterCheckinInterval: 10000
+              useProperties: false
+            threadPool:
+              class: org.quartz.simpl.SimpleThreadPool
+              threadCount: 10
+              threadPriority: 5
+              threadsInheritContextClassLoaderOfInitializingThread: true
+      job-store-type: jdbc
+      jdbc:
+        initialize-schema: embedded
 feign:
     hystrix:
       enabled: true
@@ -58,7 +114,7 @@ hystrix:
             thread:
               timeoutInMilliseconds: 5000
 mybatis-plus:
-    mapper-locations: mapper/*Mapper.xml
+    mapper-locations: classpath*:mapper/*Mapper.xml
     configuration:
         call-setters-on-nulls: true
 
@@ -67,6 +123,8 @@ thread:
       corePoolSize: 10
       maxiPoolSize: 20
       keepAliveTime: 0
+
+
 
 
 

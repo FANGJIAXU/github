@@ -3,6 +3,13 @@ alarm:
     content: 指标应该{method}但是指标{key}当前值为{value}
   statistics:
     corn: 0 0 0/1 * * ? *
+  zabbix:
+    count: 5 #zabbix压缩告警采集次数
+    cycleCount: 20 #循环最大次数
+  threshold:
+    startMinute: 5  #阈值压缩quartz在项目启动之后多少分启动
+    corn: 0/30 * * * * ? #阈值压缩quartz的频率
+    count: 5  #阈值告警采集次数
 sourceAlarm:
   delete:
     day: 15
@@ -13,34 +20,9 @@ spring:
   data:
     mongodb:
       database: alarm
-  kafka:
-    consumer:
-      bootstrap-servers: 10.202.229.122:9092
-      group-id: zabbix_event
-      auto-offset-reset: earliest
-      enable-auto-commit: true
-      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
   quartz:
     properties:
       org:
         quartz:
           scheduler:
             instanceName: alarmScheduler
-            instanceId: AUTO
-          jobStore:
-            class: org.quartz.impl.jdbcjobstore.JobStoreTX
-            driverDelegateClass: org.quartz.impl.jdbcjobstore.StdJDBCDelegate
-            tablePrefix: QRTZ_
-
-            isClustered: true
-            clusterCheckinInterval: 10000
-            useProperties: false
-          threadPool:
-            class: org.quartz.simpl.SimpleThreadPool
-            threadCount: 10
-            threadPriority: 5
-            threadsInheritContextClassLoaderOfInitializingThread: true
-    job-store-type: jdbc
-    jdbc:
-      initialize-schema: embedded

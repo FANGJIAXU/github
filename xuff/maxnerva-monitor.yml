@@ -5,10 +5,23 @@ influx:
   db: telegraf
   user: root
   password: root
-  url: http://10.202.229.122:8016
+  url: http://127.0.0.1:8016
 zabbix:
   session:
      expire: 10 #单位分钟
+bigScreen:
+  health:
+    cpuPresent: 0.3
+    memoryPresent: 0.4
+    diskPresent: 0.3
+    itemKeyPresent: 0.6
+    alarmPresent: 0.4
+    cpuHealth: 10
+    diskHealth: 50
+    memoryHealth: 30
+    cpuNoHealth: 90
+    diskNoHealth: 90
+    memoryNoHealth: 90
 spring:
   data:
      mongodb:
@@ -19,20 +32,3 @@ spring:
             quartz:
                 scheduler:
                     instanceName: clusteredScheduler
-                    instanceId: AUTO
-                jobStore:
-                    class: org.quartz.impl.jdbcjobstore.JobStoreTX
-                    driverDelegateClass: org.quartz.impl.jdbcjobstore.StdJDBCDelegate
-                    tablePrefix: QRTZ_
-
-                    isClustered: true
-                    clusterCheckinInterval: 10000
-                    useProperties: false
-                threadPool:
-                    class: org.quartz.simpl.SimpleThreadPool
-                    threadCount: 10
-                    threadPriority: 5
-                    threadsInheritContextClassLoaderOfInitializingThread: true
-     job-store-type: jdbc
-     jdbc:
-        initialize-schema: always

@@ -1,0 +1,10 @@
+spring:
+  kafka:
+    consumer:
+      group-id: autoops
+  quartz:
+    properties:
+      org:
+        quartz:
+          scheduler:
+            instanceName: autoOpsScheduler

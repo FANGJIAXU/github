@@ -1,0 +1,5 @@
+autoopstool:
+  kafka:
+    topics:
+      ansible-log-topic: ansible_finish_log
+      ansible-change-password-topic: ansible_change_password_log

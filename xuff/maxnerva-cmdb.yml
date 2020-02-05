@@ -1,30 +1,20 @@
 spring:
+  kafka:
+    consumer:
+      group-id: cmdb
   data:
     mongodb:
-      database: cmdb1
+      database: cmdb3
+    neo4j:
+      uri: bolt://127.0.0.1:7687
+      username: neo4j
+      password: maxnerva
   quartz:
     properties:
       org:
         quartz:
           scheduler:
             instanceName: cmdbScheduler
-            instanceId: AUTO
-          jobStore:
-            class: org.quartz.impl.jdbcjobstore.JobStoreTX
-            driverDelegateClass: org.quartz.impl.jdbcjobstore.StdJDBCDelegate
-            tablePrefix: QRTZ_
-
-            isClustered: true
-            clusterCheckinInterval: 10000
-            useProperties: false
-          threadPool:
-            class: org.quartz.simpl.SimpleThreadPool
-            threadCount: 10
-            threadPriority: 5
-            threadsInheritContextClassLoaderOfInitializingThread: true
-    job-store-type: jdbc
-    jdbc:
-      initialize-schema: embedded
 inventory:
   plan:
     prefix: INVEN
@@ -35,13 +25,14 @@ city:
 guacamole:
   username: guacadmin
   password: guacadmin
-  ip: 10.202.229.122
+  ip: 127.0.0.1
   port: 80
   suffix:
   token:
     expire: 30
 webssh:
   ip: 10.202.228.8
-  port: 8888
+  port: 8097
 account:
   ipCode : managerIp1,ip,managerIp
+serviceCostShowPath: http://10.202.229.191:8080/#/staticLink/serviceCost  #服务订单链接的地址

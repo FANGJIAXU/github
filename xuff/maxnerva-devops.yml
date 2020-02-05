@@ -1,0 +1,3 @@
+jenkins:
+  job:
+    maxCycleNumber: 10 #端口自增长的最大次数
