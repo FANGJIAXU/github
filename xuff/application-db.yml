@@ -51,29 +51,29 @@ spring:
 #        database: cmdb
       elasticsearch:
         cluster-name: docker-cluster
-        cluster-nodes: 10.202.228.8:9300
+        cluster-nodes: 127.0.0.1:9300
         repositories:
           enabled: true
     elasticsearch:
       jest:
         connection-timeout: 20000s
         read-timeout: 20000s
-        uris: http://10.202.228.8:9200
+        uris: http://127.0.0.1:9200
       rest:
-        uris: http://10.202.228.8:9200
+        uris: http://127.0.0.1:9200
     rabbitmq:
       host: 127.0.0.1
       username: guest
       password: guest
     kafka:
       consumer:
-        bootstrap-servers: 10.202.228.8:9092
+        bootstrap-servers: 121.199.59.216:9092
         auto-offset-reset: earliest
         enable-auto-commit: true
         key-desherializer: org.apache.kafka.common.serialization.StringDeserializer
         value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       producer:
-        bootstrap-servers: 10.202.228.8:9092
+        bootstrap-servers: 121.199.59.216:9092
         retries: 0
         batch-size: 4096
         buffer-memory: 409600
